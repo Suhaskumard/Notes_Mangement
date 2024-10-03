@@ -1,51 +1,90 @@
-.navhome{
-    width:100%;
-    display:flex;
-    justify-content: space-between;
-    align-content: flex-end;
-    margin:none;
-    border:2px solid black;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #97e3eb;
+    color: #333;
+    line-height: 1.6;
+    background-image:url(Designer.png);
+    background-size:100% 300%;
+    background-position: center; 
+    background-repeat: no-repeat;
 
 }
-.navhome ul{
-    width:80%;
-    display:flex;
-    justify-content:flex-end;
-    list-style:none;
-    align-items:center;
-}
-body{
-    background-color:bisque;
-    height:100%;
-    width:100%;
-    
 
+header {
+    background: #040304;
+    padding: 10px 0;
 }
-.navhome ul li {
-    margin-left: 20px;
-    
+
+.navhome ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
-.main{
-    text-align: center;
-    
+
+.homelink {
+    margin: 0 15px;
 }
-.homelink a{
+
+.homelink a {
+    color: white;
     text-decoration: none;
-    color:white;
-    background-color: black;
-    border-radius: 5px;
-    border:3px solid grey;
-    padding: 2px 5px 2px 5px;
-}
-.uv-btn{
-    display:flexbox;
-    margin-left:40%;
-    margin-right: 40%;
-    padding: 30px;
-    border-radius: 10px;
-   background-color:rgb(251, 27, 98);
-   border:2px solid;
-    
+    font-weight: bold;
 }
 
+.homelink a:hover {
+    text-decoration: underline;
+}
+
+.main {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.heading {
+    font-size: 24px;
+    margin-bottom: 30px;
+    animation:scroll 12s linear infinite;
+    color:#eaf90c;
+    -webkit-text-stroke: 0.5px black;
+}
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.uv-btn button {
+    background: orangered;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.uv-btn button:hover {
+    background: #ed0c0c;
     
+}
+.uv-btn {
+    border:2px solid black;
+    padding:50px;
+    margin-top:80px;
+    margin-left:120px;
+    margin-right:120px;
+    border-radius: 10px;
+    align-content:center;
+    background-color:transparent;
+    backdrop-filter: invert(80%);
+}
