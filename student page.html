@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .login-button {
+            background-color: #32a89f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .search-section, .dropdown-section {
+            margin: 20px 0;
+        }
+
+        label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        input[type="text"], select {
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .available-notes {
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .note-item {
+            background-color: #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .note-details p {
+            margin-bottom: 5px;
+        }
+
+        .note-actions {
+            display: flex;
+            justify-content:flex-start;
+                    gap:10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .download-button {
+            background-color:#32a89f ;       
+   color: white;
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .favorite-button {
+            background-color: #32a89f;
+            color: white;
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+          
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="login-button">Log-in</button>
+            <div class="menu-icon">
+                <span>&#9776;</span>
+            </div>
+        </header>
+
+        <main>
+       
+            <div class="search-section">
+                <label for="search-notes">Search Notes:</label>
+                <input type="text" id="search-notes" name="search-notes" placeholder="search for notes">
+            </div>
+
+            <div class="dropdown-section">
+                <label for="standard-select">Select Standard:</label>
+                <select id="standard-select" name="standard-select">
+                    <option value="1st-std">1st Std</option>
+                    <option value="2nd std">2nd Std</option>
+                       <option value="3rd std">3rd Std</option>
+                        <option value="4th std">4th Std</option>
+                         <option value="5th std">5th Std</option>
+                          <option value="6th std">6th Std</option>
+                           <option value="7th std">7th Std</option>
+                            <option value="8th std">8th Std</option>
+                             <option value="9th std">9th Std</option>
+                              <option value="10th std">10th Std</option>
+                </select>
+            </div>
+
+            <section class="available-notes">
+                <h3>Available Notes</h3>
+             
+                <div class="note-item">
+                   <ul>
+                        <li>
+                            <div class="note-details">
+                                <p><strong>Notes Title</strong></p>
+                                <p>Upload Date: 01-01-2024</p>
+                                <p>Teacher Name: Mr. John</p>
+                                <p>File Type: PDF</p>
+                            </div>
+
+                            <div class="note-actions">
+                                <button class="download-button">Download</button>
+                                <button class="favorite-button">Favorite</button>
+                            </div>
+                        </li>
+                 </ul>
+              </div>
+            
+            </section>
+        </main>
+    </div>
+</body>
+</html>
