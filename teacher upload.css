@@ -2,6 +2,9 @@ body {
     font-family: Arial, sans-serif;
     padding: 20px;
     background-image:url(note.jpg);
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {

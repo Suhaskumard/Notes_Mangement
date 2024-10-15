@@ -10,9 +10,9 @@ body {
     color: #333;
     line-height: 1.6;
     background-image:url(note.jpg);
-    background-size:100% 300%;
     background-position: center; 
     background-repeat: no-repeat;
+    background-size: cover;
 
 }
 

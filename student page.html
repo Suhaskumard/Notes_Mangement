@@ -15,6 +15,10 @@
             font-family: Arial, sans-serif;
             background-color: #f8f8f8;
             color: #333;
+            background-image:url(note.jpg);
+            background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
         }
 
         .container {
@@ -33,7 +37,7 @@
             background-color: #32a89f;
             color: white;
             padding: 10px 20px;
-            border: none;
+            border: 2px solid black;
             border-radius: 5px;
             cursor: pointer;
         }
@@ -50,13 +54,17 @@
         label {
             display: inline-block;
             margin-right: 10px;
+            font-weight: bold;
         }
 
         input[type="text"], select {
             padding: 5px;
             font-size: 16px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 2px solid black;
+        }
+        .list{
+            list-style-type:none;
         }
 
         .available-notes {
@@ -72,6 +80,7 @@
             background-color: #ddd;
             padding: 15px;
             border-radius: 5px;
+            border:2px solid black;
         }
 
         .note-details p {
@@ -86,7 +95,7 @@
 
         button {
             padding: 10px 20px;
-            border: none;
+            border: 2px solid black;
             border-radius: 5px;
             cursor: pointer;
         }
@@ -143,7 +152,7 @@ box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
              
                 <div class="note-item">
                    <ul>
-                        <li>
+                        <li class="list">
                             <div class="note-details">
                                 <p><strong>Notes Title</strong></p>
                                 <p>Upload Date: 01-01-2024</p>
