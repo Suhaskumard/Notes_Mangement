@@ -1,0 +1,69 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+   
+}
+
+h1 {
+    margin: 0;
+}
+
+.menu {
+    position: relative;
+}
+
+.hamburger {
+    cursor: pointer;
+    font-size: 1.5rem;
+   
+}
+
+.notes-container {
+    padding: 1rem;
+    height: auto;
+  
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+   
+}
+
+li {
+    background-color: #3333;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column; /* This ensures ol elements go to next line */
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to right */
+}
+
+.buttons button {
+    margin-left: 0.5rem;
+}
+
+ol {
+    margin: 0;
+}
