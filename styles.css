@@ -82,8 +82,8 @@ header {
     margin-right: 120px;
     border-radius: 10px;
     align-content: center;
-    background-color: transparent;
-    backdrop-filter: invert(25%);
+    background-color: #d2282833;
+    backdrop-filter: invert(5%);
 }
 
 .p {

@@ -1,4 +1,4 @@
-/* styles.css */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -43,6 +43,7 @@ h1 {
 .notes-container {
     padding: 1rem;
     height: auto;
+   
   
 }
 
@@ -53,22 +54,32 @@ ul {
 }
 
 li {
-    background-color: #3333;
+    background-color: #d2282833;
     margin: 0.5rem 0;
     padding: 0.5rem;
     display: flex;
-    flex-direction: column; /* This ensures ol elements go to next line */
+    flex-direction: column; 
 }
 
 .buttons {
     display: flex;
-    justify-content: flex-end; /* Align buttons to right */
+    justify-content: flex-end; 
 }
 
 .buttons button {
     margin-left: 0.5rem;
+    color:white;
+    background-color:#5cb85c ;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 ol {
     margin: 0;
+}
+.home{
+    background-color:#5cb85c ;
+    border-radius: 5px;
+    cursor: pointer;
+    color:white;
 }

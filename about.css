@@ -74,3 +74,15 @@ footer {
         font-size: 1em;
     }
 }
+.home{
+    padding: 10px 20px;
+    background-color:#5cb85c ;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    align-self: flex-start;
+}
