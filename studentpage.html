@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f5f5f5;
+            background-image: url(note.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #333;
+        }
+
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background-color: #4cae4c;
+            transform: scale(1.1);
+        }
+
+        .search-section,
+        .dropdown-section {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select {
+            padding: 10px;
+            margin-left: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: calc(100% - 150px);
+            max-width: 400px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .available-notes h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #444;
+            text-align: center;
+        }
+
+        .note-item {
+            background-color: #e6e6e6;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .note-item:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.02);
+        }
+
+        .note-details p {
+            margin-bottom: 8px;
+        }
+
+        .note-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .download-button,
+        .favorite-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-button {
+            background-color: #5cb85c;
+        }
+
+        .favorite-button {
+            background-color: #337ab7;
+        }
+
+        .download-button:hover {
+            background-color: #4cae4c;
+        }
+
+        .favorite-button:hover {
+            background-color: #2e6da4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="nav-buttons">
+                <a href="home.html" class="nav-button">Home</a>
+                <a href="login.html" class="nav-button">Log in</a>
+            </div>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <label for="search-notes">Search Notes:</label>
+                <input type="text" id="search-notes" name="search-notes" placeholder="Search for notes">
+            </section>
+
+            <section class="dropdown-section">
+                <label for="standard-select">Select Standard:</label>
+                <select id="standard-select" name="standard-select">
+                    <option value="1st-std">1st Std</option>
+                    <option value="2nd-std">2nd Std</option>
+                    <option value="3rd-std">3rd Std</option>
+                    <option value="4th-std">4th Std</option>
+                    <option value="5th-std">5th Std</option>
+                    <option value="6th-std">6th Std</option>
+                    <option value="7th-std">7th Std</option>
+                    <option value="8th-std">8th Std</option>
+                    <option value="9th-std">9th Std</option>
+                    <option value="10th-std">10th Std</option>
+                </select>
+            </section>
+
+            <section class="available-notes">
+                <h3>Available Notes</h3>
+                <div class="note-item">
+                    <div class="note-details">
+                        <p><strong>Notes Title</strong></p>
+                        <p>Upload Date: 01-01-2024</p>
+                        <p>Teacher Name: Mr. John</p>
+                        <p>File Type: PDF</p>
+                    </div>
+                    <div class="note-actions">
+                        <button class="download-button">Download</button>
+                        <button class="favorite-button">Favorite</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Notes Management System. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
+
