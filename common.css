@@ -73,7 +73,7 @@ main {
 }
 
 .notes-container li:hover {
-    background-color: #f1f1f1;
+    background-color: transparent;
     transform: scale(1.02);
     transition: 0.3s ease;
 }

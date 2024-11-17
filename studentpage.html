@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-       
         * {
             margin: 0;
             padding: 0;
@@ -15,31 +15,37 @@
         body {
             font-family: 'Roboto', Arial, sans-serif;
             background-color: #f5f5f5;
-            color: #333;
-            background-image: url(note.jpg);
+            background-image: url(imgnote.jpg);
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            color: #333;
         }
 
         .container {
-            margin: 0 auto;
-            max-width: 800px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+    max-width: 800px;
+    margin: 50px auto;
+    background: transparent; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-    
+
+
         header {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
         }
 
-        .login-button {
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-button {
             background-color: #5cb85c;
             color: white;
             padding: 10px 20px;
@@ -52,13 +58,13 @@
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
-        .login-button:hover {
+        .nav-button:hover {
             background-color: #4cae4c;
             transform: scale(1.1);
         }
 
-      
-        .search-section, .dropdown-section {
+        .search-section,
+        .dropdown-section {
             margin-bottom: 20px;
         }
 
@@ -67,21 +73,23 @@
             font-weight: bold;
         }
 
-        input[type="text"], select {
-            padding: 8px;
+        input[type="text"],
+        select {
+            padding: 10px;
             margin-left: 10px;
             font-size: 16px;
             border: 1px solid #ddd;
             border-radius: 5px;
             width: calc(100% - 150px);
             max-width: 400px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-     
         .available-notes h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
+            font-size: 24px;
+            margin-bottom: 15px;
             color: #444;
+            text-align: center;
         }
 
         .note-item {
@@ -109,61 +117,49 @@
             margin-top: 10px;
         }
 
-        button {
+        .download-button,
+        .favorite-button {
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
             text-decoration: none;
-        }
-
-        
-        .download-button {
-            background-color: #5cb85c;
             color: white;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-button {
+            background-color: #5cb85c;
         }
 
         .favorite-button {
             background-color: #337ab7;
-            color: white;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
         }
 
-        button:hover {
-            transform: scale(1.05);
-        }
-
-        .home-button {
-            display: block;
-            margin: 20px auto;
-            background-color: #5cb85c;
-            color: white;
-            font-size: 18px;
-            text-align: center;
-            width: 100%;
-            max-width: 200px;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
-        }
-
-        .home-button:hover {
+        .download-button:hover {
             background-color: #4cae4c;
-            transform: scale(1.1);
         }
-        a{
-            text-decoration: none;
+
+        .favorite-button:hover {
+            background-color: #2e6da4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <a href="login.html" class="login-button">Log in</a>
+            <div class="nav-buttons">
+                <a href="home.html" class="nav-button">Home</a>
+                <a href="login.html" class="nav-button">Log in</a>
+            </div>
         </header>
 
         <main>
@@ -203,9 +199,12 @@
                     </div>
                 </div>
             </section>
-
-            <a href="home.html"><button class="home-button">Home</button></a>
         </main>
+
+        <footer>
+            <p>&copy; 2024 Notes Management System. All rights reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
+
