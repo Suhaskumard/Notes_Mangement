@@ -7,31 +7,40 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
-    background-image: url(note.jpg);
+    background-image: url(imgnote.jpg);
     background-position: center; 
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    width: 100vw;
+   
 }
+
 
 .container {
     max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
+    margin: 20px auto;
+    background: transparent; 
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+
+
+
 h1, h2, h3 {
-    color: #333;
+    color: black;
     margin-bottom: 10px;
 }
 
 p {
     margin-bottom: 20px;
-    color: #555;
+    color: black;
+    
 }
 
 ul {
@@ -42,7 +51,7 @@ ul {
 ul li {
     margin: 5px 0;
     font-size: 1.1em;
-    color: #555;
+    color: black;
 }
 
 a {
@@ -58,7 +67,7 @@ footer {
     text-align: center;
     margin-top: 20px;
     font-size: 0.9em;
-    color: #888;
+    color: #170d0d;
 }
 
 @media (max-width: 768px) {
