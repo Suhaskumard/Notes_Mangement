@@ -7,13 +7,10 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #97e3eb;
+    background-color: #f0f7fa;
     color: #333;
     line-height: 1.6;
-    background-image: url(imgnote.jpg);
-    background-position: center; 
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #ffe0c2;
     height: 100vh;
     width: 100vw;
 }
@@ -21,11 +18,11 @@ body {
 /* Header Styling */
 header {
     background: #040304;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 .navhome {
-    height: 40px;
+    height: 50px;
 }
 
 .navhome ul {
@@ -33,37 +30,38 @@ header {
     display: flex;
     justify-content: center;
     margin-top: 8px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .homelink {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 .homelink a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 .homelink a:hover {
-    text-decoration: underline;
+    color: orangered;
 }
 
 .common-page-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
 }
 
 .common-page-btn button {
     background-color: orangered;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
     transition: background 0.3s;
 }
@@ -75,61 +73,65 @@ header {
 /* Main Section */
 .main {
     text-align: center;
-    padding: 50px 20px;
+    padding: 80px 20px;
 }
 
 .heading {
-    font-size: 30px;
+    font-size: 36px;
     margin-bottom: 20px;
-    color: black;
+    color: #333;
 }
 
 .intro {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #444;
+    font-size: 22px;
+    margin-bottom: 30px;
+    color: #555;
 }
 
 .uv-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
     margin: 40px auto;
-    border: 1px solid #ddd;
-    padding: 20px;
+    border: 2px solid #ddd;
+    padding: 30px;
     border-radius: 10px;
-    background:transparent;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
     font-weight: 300;
-    color:black
+    max-width: 500px;
 }
 
 .uv-btn button {
     background: orangered;
     color: white;
-    border: 2px solid black;
-    padding: 10px 20px;
-    border-radius: 5px;
+    border: 2px solid #333;
+    padding: 15px 25px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .uv-btn button:hover {
     background: #ed0c0c;
+    transform: scale(1.05);
 }
 
 .button-description {
-    font-size: 14px;
-    color: #555;
+    font-size: 16px;
+    color: #666;
 }
 
 /* Footer Section */
 .footer {
     background-color: #040304;
     color: white;
-    padding: 20px 0;
+    padding: 30px 20px;
     text-align: center;
+    margin-top: 80px;
 }
 
 .footer-content {
@@ -147,7 +149,7 @@ header {
     margin: 20px;
 }
 
-.footer-section h2, .footer-section h3 {
+.footer-section h3 {
     margin-bottom: 15px;
     color: orangered;
 }
@@ -160,8 +162,8 @@ header {
 
 .socials a {
     display: inline-block;
-    margin-right: 10px;
-    font-size: 20px;
+    margin-right: 15px;
+    font-size: 22px;
     color: white;
     transition: color 0.3s;
 }
@@ -181,5 +183,30 @@ header {
     .footer-content {
         flex-direction: column;
         align-items: center;
+    }
+
+    .main {
+        padding: 50px 20px;
+    }
+
+    .heading {
+        font-size: 28px;
+    }
+
+    .intro {
+        font-size: 18px;
+    }
+
+    .uv-btn {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .uv-btn button {
+        font-size: 16px;
+    }
+
+    .button-description {
+        font-size: 14px;
     }
 }
