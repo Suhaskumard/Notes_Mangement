@@ -126,3 +126,13 @@ ol {
     background-color: #4cae4c;
     transform: scale(1.05);
 }
+.d-btn{
+    background-color:#4cae4c ;
+    border-radius: 1cap;
+    padding:0.8rem 1.5rem;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    display: block;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 1rem;
+}

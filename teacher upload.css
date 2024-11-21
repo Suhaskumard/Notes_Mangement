@@ -31,7 +31,7 @@ input[type="text"], textarea, select, input[type="file"] {
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ddd ;
-    border-radius: 5%;
+    border-radius: 0.5cap;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     
 }
