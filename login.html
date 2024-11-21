@@ -3,36 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Notes Management System</title>
+    <title>Login Page</title>
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <div class="login-container">
-        <div class="login-box">
-            <h2>Login</h2>
-            <form action="#" method="POST">
-                <div class="input-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
-                </div>
-                <div class="input-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                </div>
-                <div class="role-select">
-                    <label for="role">Login as:</label>
-                    <select id="role" name="role">
-                        <option value="teacher">Teacher</option>
-                        <option value="student">Student</option>
-                    </select>
-                </div>
-                <button type="submit" class="login-btn">Login</button>
-            </form>
-            <a href="home.html"><button class="home">Home</button></a>
-        </div>
-        
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+            
+            <label for="role">Role:</label>
+            <select id="role" required>
+                <option value="">Select Role</option>
+                <option value="teacher">Teacher</option>
+                <option value="student">Student</option>
+            </select>
+            
+            <label for="class">Class (Only for Students):</label>
+            <select id="class">
+                <option value="">Select Class</option>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="3rd">3rd</option>
+                <option value="4th">4th</option>
+                <option value="5th">5th</option>
+                <option value="6th">6th</option>
+                <option value="7th">7th</option>
+                <option value="8th">8th</option>
+                <option value="9th">9th</option>
+                <option value="10th">10th</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
     </div>
-    
-    
+    <script src="login.js"></script>
 </body>
 </html>

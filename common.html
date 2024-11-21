@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="container">
-            <h1>Notes List Common For Both Teachers and Students</h1>
+            <h1>Notes List - Common for Both Teachers and Students</h1>
             <div class="menu">
                 <div class="hamburger">&#9776;</div>
             </div>
@@ -17,40 +17,50 @@
     </header>
     <main>
         <div class="notes-container">
-            <ul>
-                <li>
-                    <ol>Maths Notes - Fraction</ol>
-                    <ol>Grade 5 - Math</ol>
-                    <ol>Uploaded on 2024-09-01</ol>
-                    <div class="buttons">
-                        <button>Download</button>
-                        <button>Edit</button>
-                        <button>Trash</button>
-                    </div>
-                </li>
-                <li>
-                   <ol>Science Notes - Chemistry</ol>
-                    <ol>Grade 5 - textbook</ol>
-                    <ol>Uploaded on 2024-09-01</ol>
-                    <div class="buttons">
-                        <button>Download</button>
-                        <button>Edit</button>
-                        <button>Trash</button>
-                    </div>
-                </li>
-                <li>
-                   <ol>Social Notes - Civics</ol>
-                    <ol>Grade 5 - social</ol>
-                    <ol>Uploaded on 2024-09-01</ol>
-                    <div class="buttons">
-                        <button>Download</button>
-                        <button>Edit</button>
-                        <button>Trash</button>
-                    </div>
-                </li>
-            </ul>
+            <ul id="notes-list"></ul>
             <a href="home.html"><button class="home">Home</button></a>
         </div>
     </main>
+    <script src="common.js"></script>
+    <script>
+        // Fetch notes from localStorage
+        const notes = JSON.parse(localStorage.getItem("notes")) || [];
+    
+        // Function to render notes
+        function renderNotes() {
+            const notesList = document.getElementById("notes-list");
+            notesList.innerHTML = ""; // Clear existing notes
+    
+            if (notes.length === 0) {
+                notesList.innerHTML = "<li>No notes available yet.</li>";
+                return;
+            }
+    
+            notes.forEach((note) => {
+                const li = document.createElement("li");
+    
+                li.innerHTML = `
+                    <strong>Title:</strong> ${note.title} <br>
+                    <strong>Class:</strong> ${note.standard} <br>
+                    <strong>Description:</strong> ${note.description} <br>
+                    <strong>Uploaded on:</strong> ${note.date} <br>
+                    <button onclick="downloadNote('${note.fileName}')">Download</button>
+                    <hr>
+                `;
+    
+                notesList.appendChild(li);
+            });
+        }
+    
+        // Function to handle note download
+        function downloadNote(fileName) {
+            alert(`Starting download for: ${fileName}`);
+            // Add your download logic here, e.g., redirect to the file URL
+        }
+    
+        // Render notes on page load
+        renderNotes();
+    </script>
+    
 </body>
 </html>
