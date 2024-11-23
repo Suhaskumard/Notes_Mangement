@@ -18,10 +18,28 @@ document.addEventListener("DOMContentLoaded", function () {
     // Fetch notes from localStorage
     const notes = JSON.parse(localStorage.getItem("notes")) || [];
 
+    // Populate subject filter dynamically based on note titles
+    function populateSubjectFilter() {
+        const subjectFilter = document.getElementById("subjectFilter");
+        const titles = [...new Set(notes.map(note => note.title))]; // Extract unique titles
+
+        subjectFilter.innerHTML = '<option value="all">All Subjects</option>'; // Default option
+
+        titles.forEach(title => {
+            const option = document.createElement("option");
+            option.value = title;
+            option.textContent = title;
+            subjectFilter.appendChild(option);
+        });
+    }
+
     // Display notes for the student's class
     function displayNotes(subjectFilter = "all") {
         const filteredNotes = notes.filter(note => {
-            return note.standard === studentClass && (subjectFilter === "all" || note.subject.toLowerCase() === subjectFilter.toLowerCase());
+            return (
+                note.standard === studentClass && 
+                (subjectFilter === "all" || note.title.toLowerCase().includes(subjectFilter.toLowerCase()))
+            );
         });
 
         const notesContainer = document.getElementById("notesContainer");
@@ -33,15 +51,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 noteCard.className = "note-card";
                 noteCard.innerHTML = `
                     <h3>${note.title}</h3>
-                    <p><strong>Subject:</strong> ${note.subject}</p>
-                    <p><strong>Description:</strong> ${note.description}</p>
+                    <p><strong>Description:</strong> ${note.description || "No description provided."}</p>
                     <p><strong>Uploaded on:</strong> ${note.date}</p>
                     <button onclick="downloadNote('${note.fileName}')">Download</button>
                 `;
                 notesContainer.appendChild(noteCard);
             });
         } else {
-            notesContainer.innerHTML = `<p>No notes available for your class and selected subject.</p>`;
+            notesContainer.innerHTML = `<p>No notes available for your class and selected filter.</p>`;
         }
     }
 
@@ -51,7 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add download functionality if file URLs are available
     }
 
-    // Initial display of notes
+    // Populate filter dropdown and initially display notes
+    populateSubjectFilter();
     displayNotes();
 
     // Event listener for subject filter changes

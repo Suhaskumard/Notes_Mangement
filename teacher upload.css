@@ -1,87 +1,138 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    padding: 0;
+    margin: 0;
     background-color: #ffe0c2;
-  height: 100vh;
-width: 100vw;
+}
+header {
+    background-color: #010301;
+    padding: 5px;
+    text-align: center;
+    color: white;
 }
 
 .container {
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
+.head1 {
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
     color: #333;
+    margin: 30px 0;
+}
+
+h2 {
+    font-size: 22px;
+    color: #333;
+    margin-top: 20px;
 }
 
 form {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 label {
-    display: block;
-    margin: 10px 0 5px;
-    font-size: 15px;
-    font-weight:bold;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
 }
 
 input[type="text"], textarea, select, input[type="file"] {
     width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd ;
-    border-radius: 0.5cap;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    resize: vertical;
 }
 
 button {
-    padding: 8px 16px;
+    padding: 12px 20px;
+    font-size: 16px;
     background-color: #28a745;
     color: white;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
-    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #218838;
 }
 
+button:active {
+    background-color: #1e7e34;
+}
+
 ul {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
 }
 
 ul li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border: 1px solid black;
+    margin-bottom: 15px;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
 }
 
 ul li button {
     background-color: #dc3545;
     color: white;
-    padding: 5px 10px;
+    padding: 8px 15px;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 4px;
+    font-size: 14px;
 }
 
 ul li button:hover {
     background-color: #c82333;
 }
-.home{
+
+ul li .edit {
+    background-color: #007bff;
+    margin-left: 10px;
+}
+
+ul li .edit:hover {
+    background-color: #0056b3;
+}
+
+.view-all-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.view-all-btn button {
     padding: 10px 20px;
-    background-color:#28a745;
+    background-color: #28a745;
     color: white;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 14px;
     cursor: pointer;
-    text-align: center;
-    margin-top: 20px;
-    align-self: flex-start;
+}
+
+.view-all-btn button:hover {
+    background-color: rgb(20, 208, 20);
 }

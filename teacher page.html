@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Upload Page</title>
+    <title>Notes Upload Page</title>
     <link rel="stylesheet" href="teacher upload.css">
 </head>
 <body>
+    <header>
+        <div class="view-all-btn">
+            <a href="common.html">
+                <button type="button">View All Notes</button>
+            </a>
+        </div>
+        <h1 class="head1">Notes Upload Page</h1>
+    </header>
+
     <div class="container">
-        <h1>Upload Notes</h1>
         <form id="uploadForm">
+            <h2>Upload or Edit Notes</h2>
+
             <label for="standard">Select Standard:</label>
             <select id="standard" name="standard">
                 <option value="1st">1st</option>
@@ -19,21 +29,21 @@
                 <option value="5th">5th</option>
                 <option value="6th">6th</option>
                 <option value="7th">7th</option>
-                <option value="8th">8rd</option>
+                <option value="8th">8th</option>
                 <option value="9th">9th</option>
                 <option value="10th">10th</option>
             </select>
 
             <label for="title">Title of the Note:</label>
-            <input type="text" id="title" name="title" required>
+            <input type="text" id="title" name="title" required placeholder="Enter the note title">
 
             <label for="description">Description (optional):</label>
-            <textarea id="description" name="description" rows="3"></textarea>
+            <textarea id="description" name="description" rows="4" placeholder="Add a brief description of the note"></textarea>
 
             <label for="file">Upload Notes:</label>
-            <input type="file" id="file" name="file" accept=".pdf,.doc,.docx" required>
+            <input type="file" id="file" name="file" accept=".pdf,.doc,.docx">
 
-            <button type="submit">Upload</button>
+            <button type="submit" class="upload-btn">Upload</button>
         </form>
 
         <h2>Uploaded Notes</h2>
@@ -41,9 +51,8 @@
 
         <h2>Student Requests</h2>
         <div id="requestsContainer"></div>
-
-        <a href="home.html"><button class="home">Home</button></a>
     </div>
+
     <script src="teacher.js"></script>
 </body>
 </html>

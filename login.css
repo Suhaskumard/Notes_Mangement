@@ -52,3 +52,15 @@ body {
 .login-container button:hover {
     background-color: #0056b3;
 }
+.view-btn{
+    position: absolute;
+    top: 20px;
+    right: 20px; 
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 12px 25px;
+}

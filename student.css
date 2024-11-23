@@ -1,48 +1,53 @@
-/* General Styles */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #ffe0c2;
+    color: #333;
     margin: 0;
     padding: 0;
-    color: #333;
     min-height: 100vh;
 }
 
-/* Page Title and Headings */
-h1 {
+header {
+    background-color: #010301;
+    padding: 5px;
     text-align: center;
-    margin-top: 20px;
-    font-size: 36px;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
-    text-align: center;
-    color: #fff;
-    font-size: 28px;
-    margin-bottom: 20px;
+    font-size: 22px;
+    margin-top: 0;
 }
 
-/* Filter Section */
-label {
-    display: block;
+.filter-section {
+    margin: 40px 0;
     text-align: center;
+}
+
+label {
     font-size: 18px;
-    color: #fff;
+    font-weight: bold;
+    color: #555;
     margin-bottom: 10px;
+    display: block;
 }
 
 #subjectFilter {
-    display: block;
-    margin: 0 auto 20px;
-    padding: 10px;
-    width: 50%;
-    border-radius: 5px;
-    border: none;
-    background-color: #fff;
-    color: #333;
     font-size: 16px;
+    padding: 12px;
+    width: 60%;
+    max-width: 400px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
     outline: none;
     transition: background-color 0.3s ease;
 }
@@ -51,82 +56,94 @@ label {
     background-color: #f0f0f0;
 }
 
-/* Notes Container */
 #notesContainer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 20px;
 }
 
-/* Note Card */
 .note-card {
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
     padding: 20px;
-    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .note-card h3 {
-    font-size: 20px;
+    font-size: 22px;
     color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .note-card p {
     font-size: 16px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     color: #666;
 }
 
 .note-card button {
-    padding: 10px 15px;
+    padding: 12px 18px;
+    background-color:#28a745 ;
+    color: white;
     border: none;
     border-radius: 5px;
-    background: #fda085;
-    color: #fff;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 16px;
     transition: all 0.3s ease;
 }
 
 .note-card button:hover {
-    background: #f38181;
+    background-color: #f38181;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Hover Effect for Note Cards */
 .note-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Request Class Change Button */
 #requestClassChange {
     display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #fda085;
-    color: #fff;
+    margin: 30px auto;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 #requestClassChange:hover {
-    background-color: #f38181;
+    background-color: #218838;
 }
 
-/* Responsive Design */
+.view-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.view-btn:hover {
+    background-color: #28a745;
+}
+
 @media screen and (max-width: 768px) {
     h1, h2 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     #subjectFilter {
@@ -135,5 +152,9 @@ label {
 
     #notesContainer {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    #requestClassChange {
+        font-size: 16px;
     }
 }

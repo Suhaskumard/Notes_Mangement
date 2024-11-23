@@ -1,4 +1,3 @@
-/* General Reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,22 +6,16 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f7fa;
+    background-color: #ffe0c2;
     color: #333;
     line-height: 1.6;
-    background-color: #ffe0c2;
     height: 100vh;
     width: 100vw;
 }
 
-/* Header Styling */
 header {
     background: #040304;
     padding: 20px 0;
-}
-
-.navhome {
-    height: 50px;
 }
 
 .navhome ul {
@@ -70,7 +63,6 @@ header {
     background-color: #ed0c0c;
 }
 
-/* Main Section */
 .main {
     text-align: center;
     padding: 80px 20px;
@@ -88,44 +80,73 @@ header {
     color: #555;
 }
 
-.uv-btn {
+.features-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    margin: 40px auto;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 20px;
     border: 2px solid #ddd;
-    padding: 30px;
     border-radius: 10px;
-    background: transparent;
+    background: white;
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.1);
-    font-weight: 300;
-    max-width: 500px;
+    width: 250px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.uv-btn button {
-    background: orangered;
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.feature-card h2 {
+    margin: 15px 0;
+    color: orangered;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+.feature-card i {
+    color: orangered;
+    margin-bottom: 10px;
+}
+
+.cta-container {
+    margin-top: 40px;
+}
+
+.cta-button {
+    background-color: orangered;
     color: white;
-    border: 2px solid #333;
-    padding: 15px 25px;
+    text-decoration: none;
+    padding: 15px 30px;
     border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.uv-btn button:hover {
-    background: #ed0c0c;
+.cta-button:hover {
+    background-color: #ed0c0c;
     transform: scale(1.05);
 }
 
-.button-description {
-    font-size: 16px;
-    color: #666;
+.cta-text {
+    margin-top: 40px;
+    font-size: 18px;
+    color: #444;
+    font-weight: bold;
 }
 
-/* Footer Section */
 .footer {
     background-color: #040304;
     color: white;
@@ -176,37 +197,4 @@ header {
     margin-top: 20px;
     font-size: 14px;
     color: #aaa;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .main {
-        padding: 50px 20px;
-    }
-
-    .heading {
-        font-size: 28px;
-    }
-
-    .intro {
-        font-size: 18px;
-    }
-
-    .uv-btn {
-        padding: 20px;
-        gap: 15px;
-    }
-
-    .uv-btn button {
-        font-size: 16px;
-    }
-
-    .button-description {
-        font-size: 14px;
-    }
 }

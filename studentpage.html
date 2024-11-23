@@ -8,17 +8,22 @@
 </head>
 <body>
     <header>
+        <div class="view-all-btn">
+            <a href="common.html">
+                <button type="button" class="view-btn">View All Notes</button>
+            </a>
+        </div>
         <h1>Welcome, Student</h1>
         <h2 id="studentClassDisplay"></h2>
     </header>
     <main>
-        <section>
+        <section class="filter-section">
             <label for="subjectFilter">Filter by Subject:</label>
             <select id="subjectFilter">
                 <option value="all">All Subjects</option>
-                <option value="math">Math</option>
-                <option value="science">Science</option>
-                <option value="english">English</option>
+                <option value="Math">Math</option>
+                <option value="Science">Science</option>
+                <option value="English">English</option>
                 <option value="Social Science">Social Science</option>
                 <option value="Kannada">Kannada</option>
                 <option value="Hindi">Hindi</option>

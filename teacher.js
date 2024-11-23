@@ -22,21 +22,23 @@ document.addEventListener("DOMContentLoaded", function () {
         notes.forEach((note, index) => {
             const listItem = document.createElement("li");
             listItem.innerHTML = `
-                ${note.title} - ${note.standard} 
+                <strong>${note.title}</strong> - Class: ${note.standard} <br>
+                ${note.description ? `<small>${note.description}</small><br>` : ""}
+                <em>Uploaded File:</em> ${note.fileName} <br>
+                <button class="edit" data-index="${index}">Edit</button>
                 <button class="delete" data-index="${index}">Delete</button>
             `;
             uploadedNotesList.appendChild(listItem);
         });
     }
 
-    // Handle note upload
+    // Handle note upload/edit
     uploadForm.addEventListener("submit", function (event) {
         event.preventDefault();
 
         const standard = document.getElementById("standard").value;
-        const subject = document.getElementById("subject").value;
         const title = document.getElementById("title").value;
-        const description = document.getElementById("description").value;
+        const description = document.getElementById("description").value || "";
         const fileInput = document.getElementById("file");
 
         if (!fileInput.files[0]) {
@@ -45,14 +47,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         const fileName = fileInput.files[0].name;
-        const newNote = { standard, subject, title, description, fileName, date: new Date().toLocaleString() };
+        const newNote = { standard, title, description, fileName, date: new Date().toLocaleString() };
 
         const notes = getNotes();
-        notes.push(newNote);
-        saveNotes(notes);
+        const noteIndex = uploadForm.dataset.editIndex;
 
+        if (noteIndex !== undefined) {
+            notes[noteIndex] = newNote; // Update existing note
+        } else {
+            notes.push(newNote); // Add new note
+        }
+
+        saveNotes(notes);
         uploadForm.reset();
-        alert("Note uploaded successfully!");
+        delete uploadForm.dataset.editIndex;
+        alert(noteIndex !== undefined ? "Note updated successfully!" : "Note uploaded successfully!");
         renderUploadedNotes();
     });
 
@@ -64,51 +73,44 @@ document.addEventListener("DOMContentLoaded", function () {
             notes.splice(index, 1); // Remove the note
             saveNotes(notes); // Update localStorage
             renderUploadedNotes(); // Re-render notes
+        } else if (event.target.classList.contains("edit")) {
+            const index = event.target.dataset.index;
+            const notes = getNotes();
+            const note = notes[index];
+
+            // Fill the form with the note data for editing
+            document.getElementById("standard").value = note.standard;
+            document.getElementById("title").value = note.title;
+            document.getElementById("description").value = note.description;
+
+            // Temporarily store the index for editing
+            uploadForm.dataset.editIndex = index;
         }
     });
 
-    // Render student requests
+    // Render requests for class changes
     function renderRequests() {
         const requests = getRequests();
         requestsContainer.innerHTML = "";
 
         if (requests.length === 0) {
-            requestsContainer.innerHTML = "<p>No student requests available.</p>";
+            requestsContainer.innerHTML = "<p>No requests pending.</p>";
             return;
         }
 
-        requests.forEach((request, index) => {
+        requests.forEach(request => {
             const requestItem = document.createElement("div");
             requestItem.classList.add("request-item");
             requestItem.innerHTML = `
-                <p>${request.studentName} (Current Class: ${request.currentClass}) requested to change to ${request.requestedClass}</p>
-                <button class="approve" data-index="${index}">Approve</button>
-                <button class="deny" data-index="${index}">Deny</button>
+                <p><strong>${request.studentName}</strong> wants to change class to ${request.newClass}.</p>
+                <button class="approve" data-id="${request.id}">Approve</button>
+                <button class="reject" data-id="${request.id}">Reject</button>
             `;
             requestsContainer.appendChild(requestItem);
         });
     }
 
-    // Handle approve/deny actions
-    requestsContainer.addEventListener("click", function (event) {
-        const target = event.target;
-        const index = target.dataset.index;
-        const requests = getRequests();
-
-        if (target.classList.contains("approve")) {
-            alert(`Request approved for ${requests[index].studentName}.`);
-            requests.splice(index, 1); // Remove the request
-            saveRequests(requests);
-            renderRequests();
-        } else if (target.classList.contains("deny")) {
-            alert(`Request denied for ${requests[index].studentName}.`);
-            requests.splice(index, 1); // Remove the request
-            saveRequests(requests);
-            renderRequests();
-        }
-    });
-
-    // Initialize page
+    // Render all notes and requests on page load
     renderUploadedNotes();
     renderRequests();
 });
