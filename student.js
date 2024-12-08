@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Display notes for the student's class
+
     function displayNotes(subjectFilter = "all") {
         const filteredNotes = notes.filter(note => {
             return (
@@ -62,17 +62,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to handle note download
     function downloadNote(fileName) {
         alert(`Starting download for: ${fileName}`);
-        // Add download functionality if file URLs are available
+        
     }
 
-    // Populate filter dropdown and initially display notes
     populateSubjectFilter();
     displayNotes();
 
-    // Event listener for subject filter changes
     const subjectFilter = document.getElementById("subjectFilter");
     if (subjectFilter) {
         subjectFilter.addEventListener("change", function () {
@@ -106,6 +103,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Periodically check for teacher approval
-    setInterval(checkClassChangeApproval, 5000); // Check every 5 seconds
+    setInterval(checkClassChangeApproval, 5000);
 });

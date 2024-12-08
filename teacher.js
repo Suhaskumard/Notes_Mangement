@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const uploadedNotesList = document.getElementById("uploadedNotes");
     const requestsContainer = document.getElementById("requestsContainer");
 
-    // Utility functions for localStorage
+    
     const getNotes = () => JSON.parse(localStorage.getItem("notes")) || [];
     const saveNotes = (notes) => localStorage.setItem("notes", JSON.stringify(notes));
     const getRequests = () => JSON.parse(localStorage.getItem("classChangeRequests")) || [];
@@ -53,9 +53,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const noteIndex = uploadForm.dataset.editIndex;
 
         if (noteIndex !== undefined) {
-            notes[noteIndex] = newNote; // Update existing note
+            notes[noteIndex] = newNote; 
         } else {
-            notes.push(newNote); // Add new note
+            notes.push(newNote); 
         }
 
         saveNotes(notes);
@@ -70,9 +70,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target.classList.contains("delete")) {
             const index = event.target.dataset.index;
             const notes = getNotes();
-            notes.splice(index, 1); // Remove the note
-            saveNotes(notes); // Update localStorage
-            renderUploadedNotes(); // Re-render notes
+            notes.splice(index, 1); 
+            saveNotes(notes); 
+            renderUploadedNotes(); 
         } else if (event.target.classList.contains("edit")) {
             const index = event.target.dataset.index;
             const notes = getNotes();
@@ -82,8 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("standard").value = note.standard;
             document.getElementById("title").value = note.title;
             document.getElementById("description").value = note.description;
-
-            // Temporarily store the index for editing
             uploadForm.dataset.editIndex = index;
         }
     });
