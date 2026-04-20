@@ -122,9 +122,3 @@ Using a local server generally provides a smoother browser experience.
 2. View notes filtered to selected class.
 3. Use subject filter dropdown.
 4. Click **Request Class Change** to submit a request.
-
-## Troubleshooting
-
-- If pages do not reflect latest data, refresh browser and check localStorage.
-- If student page redirects to login, ensure `studentClass` is set during login.
-- If notes appear missing, verify they were uploaded in the same browser profile.
