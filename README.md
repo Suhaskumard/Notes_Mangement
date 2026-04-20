@@ -123,17 +123,6 @@ Using a local server generally provides a smoother browser experience.
 3. Use subject filter dropdown.
 4. Click **Request Class Change** to submit a request.
 
-## Current Limitations
-
-This project is a good UI prototype, but a few behaviors are not fully connected yet:
-
-- Authentication is role/form-based only (no real user verification).
-- Uploaded files are not persisted anywhere; only file names are stored.
-- Download actions currently show alerts and do not trigger real file downloads.
-- Teacher request approval/rejection buttons are shown, but approval logic is incomplete.
-- `common.html` references `common.js`, but that file is not currently present.
-- Data is browser-specific and can be cleared if localStorage is reset.
-
 ## Suggested Next Improvements
 
 - Add backend API for login and note management
