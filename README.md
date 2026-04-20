@@ -123,16 +123,6 @@ Using a local server generally provides a smoother browser experience.
 3. Use subject filter dropdown.
 4. Click **Request Class Change** to submit a request.
 
-## Suggested Next Improvements
-
-- Add backend API for login and note management
-- Store uploaded files in server/cloud storage
-- Implement real note download links
-- Complete class request approval/rejection workflow
-- Add form validation and better error handling
-- Add responsive/mobile refinements
-- Add automated tests
-
 ## Troubleshooting
 
 - If pages do not reflect latest data, refresh browser and check localStorage.
