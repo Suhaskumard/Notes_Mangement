@@ -1,79 +1,83 @@
-# NotesNest - Notes Management Web App
+# NotesNest
 
-A frontend-only notes management project designed for teachers and students.
-Teachers can upload and manage class-wise notes, while students can view notes for their class and request class changes.
+NotesNest is a simple browser-based notes management app for school workflows.
+It provides separate teacher and student experiences, and stores all data in browser `localStorage`.
 
-## Project Overview
+## What This Project Is
 
-This repository currently contains one main web project in `Notes_Mangement/`.
-The application is built using:
+- A static frontend project inside `Notes_Mangement/`
+- Built with `HTML`, `CSS`, and vanilla `JavaScript`
+- No backend, database, or build setup required
+- Best suited as a prototype or mini-project
 
-- `HTML` for page structure
-- `CSS` for styling
-- `Vanilla JavaScript` for interactions
-- `localStorage` as a temporary client-side data store
+## Quick Start
 
-No backend, database, or build tool is required to run the app locally.
+1. Open the `Notes_Mangement/` folder.
+2. Launch `home.html` in a browser.
+3. Click **Login** and choose a role:
+   - **Teacher** -> redirected to `teacher page.html`
+   - **Student** -> redirected to `studentpage.html` (class required)
 
-## Key Features
+For smoother behavior, run with VS Code Live Server instead of opening files directly.
 
-- Landing page with app introduction and navigation
-- Role-based login (Teacher / Student)
-- Teacher workflow:
-  - Upload notes by class
-  - Add title and optional description
-  - Edit and delete previously uploaded notes
-  - View student class change requests
-- Student workflow:
-  - View notes for their own class
-  - Filter notes by subject/title
-  - Request class change
-- Common notes page for both roles to view all uploaded notes
+## Core Features
 
-## Folder Structure
+### Teacher
+
+- Upload notes with class, title, description, and file name
+- Edit and delete uploaded notes
+- View class-change requests from students
+- Open a common page listing all notes
+
+### Student
+
+- Login with selected class
+- View only notes matching their class
+- Filter visible notes using subject/title dropdown
+- Send class-change requests
+- Open a common page listing all notes
+
+### Shared
+
+- Landing page (`home.html`) with app overview
+- About page (`about.html`)
+- Common notes page (`common.html`) for both roles
+
+## Project Structure
 
 ```text
 suhas/
 └── Notes_Mangement/
-    ├── about.html
-    ├── about.css
-    ├── common.html
-    ├── common.css
     ├── home.html
     ├── login.html
-    ├── login.css
-    ├── login.js
-    ├── studentpage.html
-    ├── student.css
-    ├── student.js
     ├── teacher page.html
-    ├── teacher upload.css
-    ├── teacher.js
+    ├── studentpage.html
+    ├── common.html
+    ├── about.html
     ├── styles.css
+    ├── login.css
+    ├── teacher upload.css
+    ├── student.css
+    ├── common.css
+    ├── about.css
+    ├── login.js
+    ├── teacher.js
+    ├── student.js
     └── Test.java
 ```
 
-## Page-by-Page Flow
+## Local Storage Schema
 
-1. Open `home.html` to access the application.
-2. Click **Login** to go to `login.html`.
-3. Select role:
-   - **Teacher** -> redirected to `teacher page.html`
-   - **Student** -> redirected to `studentpage.html` (class selection required)
-4. Both teacher and student can open `common.html` to view all notes.
+The app persists data in browser `localStorage` using these keys:
 
-## Data Storage Model (`localStorage`)
+- `teacherUsername`
+- `studentUsername`
+- `studentClass`
+- `notes` (array of note objects)
+- `classChangeRequests` (array of request objects)
+- `approvedClass`
 
-The app stores state in browser `localStorage`:
-
-- `teacherUsername`: logged-in teacher username
-- `studentUsername`: logged-in student username
-- `studentClass`: current student class
-- `notes`: array of uploaded notes
-- `classChangeRequests`: array of class change requests
-- `approvedClass`: class value used by student approval-check logic
-
-### Example `notes` item
+Example note object:
 
 ```json
 {
@@ -85,40 +89,30 @@ The app stores state in browser `localStorage`:
 }
 ```
 
-## How to Run Locally
+## Current Gaps / Known Issues
 
-Because this is a static frontend project, there are two simple options:
+- Login is form-based only (no real authentication).
+- Files are not actually uploaded or stored; only file names are saved.
+- Download actions currently show alerts, not real downloads.
+- Class-change request approval buttons exist in UI, but full approval/rejection behavior is incomplete.
+- `common.html` references `common.js`, but that file is missing.
+- Data is browser-local and can be lost if storage is cleared.
 
-### Option A: Open directly in browser
+## Suggested Next Steps
 
-1. Go to `Notes_Mangement/`.
-2. Double-click `home.html`.
+1. Add backend APIs for authentication and notes.
+2. Persist uploaded files in server/cloud storage.
+3. Implement real download URLs.
+4. Complete class-change approval workflow.
+5. Add validation, error states, and better UX messages.
+6. Add responsive improvements and tests.
 
-### Option B: Use VS Code Live Server (recommended)
+## Troubleshooting
 
-1. Open `Notes_Mangement/` in VS Code.
-2. Install **Live Server** extension if needed.
-3. Right-click `home.html` -> **Open with Live Server**.
+- If student access fails, confirm `studentClass` is selected during login.
+- If notes are missing, check whether localStorage was cleared.
+- If UI behaves inconsistently, refresh the page and retry with Live Server.
 
-Using a local server generally provides a smoother browser experience.
+## License
 
-## How to Use the App
-
-### Teacher
-
-1. Login with role set to **Teacher**.
-2. On the upload page:
-   - Select class
-   - Enter title
-   - Add description (optional)
-   - Choose file
-   - Click upload
-3. Use **Edit** or **Delete** on existing notes.
-4. View incoming class change requests section.
-
-### Student
-
-1. Login with role set to **Student** and choose class.
-2. View notes filtered to selected class.
-3. Use subject filter dropdown.
-4. Click **Request Class Change** to submit a request.
+No `LICENSE` file is currently present in this repository.
