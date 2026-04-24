@@ -9,7 +9,7 @@ It provides separate teacher and student experiences, and stores all data in bro
 - Built with `HTML`, `CSS`, and vanilla `JavaScript`
 - No backend, database, or build setup required
 - Best suited as a prototype or mini-project 
-
+ 
 ## Quick Start
 
 1. Open the `Notes_Mangement/` folder.
